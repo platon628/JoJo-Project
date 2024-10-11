@@ -22,10 +22,10 @@ const url = "https://stand-by-me.herokuapp.com/api/v1/characters"
     fetch(url) 
     .then(response => response.json()) 
     .then(json => {
-        for(let j = 0; j<175;j++){
+        for(let j = 0; j<json.length;j++){
             const container = GetCharacterText()
             const box = document.createElement("div")
-            box.setAttribute("class","box")
+            box.classList.add("container","box")
             box.innerHTML += `
             <p>${json[j].name}</p>
             <p>${json[j].japaneseName}</p>
